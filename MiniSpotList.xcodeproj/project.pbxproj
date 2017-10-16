@@ -14,7 +14,7 @@
 		64A5B4E61F8C17D4003B014B /* SpotifyScriptObj.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 64A5B4DA1F8AD9F6003B014B /* SpotifyScriptObj.applescript */; };
 		64A5B4E81F8C36A0003B014B /* Vars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A5B4E71F8C36A0003B014B /* Vars.swift */; };
 		64A5B4EA1F8DA03D003B014B /* SongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A5B4E91F8DA03D003B014B /* SongsViewController.swift */; };
-		64A5B4EE1F941240003B014B /* ClientInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A5B4ED1F941240003B014B /* ClientInfoViewController.swift */; };
+		64A5B4EE1F941240003B014B /* ClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A5B4ED1F941240003B014B /* ClientViewController.swift */; };
 		64C349AC1F87DC1800116102 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C349AB1F87DC1800116102 /* AppDelegate.swift */; };
 		64C349B01F87DC1800116102 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64C349AF1F87DC1800116102 /* Assets.xcassets */; };
 		64C349B31F87DC1800116102 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64C349B11F87DC1800116102 /* Main.storyboard */; };
@@ -30,7 +30,7 @@
 		64A5B4E31F8AE6C0003B014B /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
 		64A5B4E71F8C36A0003B014B /* Vars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vars.swift; sourceTree = "<group>"; };
 		64A5B4E91F8DA03D003B014B /* SongsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsViewController.swift; sourceTree = "<group>"; };
-		64A5B4ED1F941240003B014B /* ClientInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientInfoViewController.swift; sourceTree = "<group>"; };
+		64A5B4ED1F941240003B014B /* ClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViewController.swift; sourceTree = "<group>"; };
 		64C349A81F87DC1800116102 /* MiniSpotList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniSpotList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64C349AB1F87DC1800116102 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64C349AF1F87DC1800116102 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 				64C349BB1F87E36000116102 /* MiniSpotListViewController.swift */,
 				64C349AB1F87DC1800116102 /* AppDelegate.swift */,
 				64A5B4E91F8DA03D003B014B /* SongsViewController.swift */,
-				64A5B4ED1F941240003B014B /* ClientInfoViewController.swift */,
+				64A5B4ED1F941240003B014B /* ClientViewController.swift */,
 				64C349AF1F87DC1800116102 /* Assets.xcassets */,
 				64C349B11F87DC1800116102 /* Main.storyboard */,
 				64C349B41F87DC1800116102 /* Info.plist */,
@@ -241,7 +241,7 @@
 				64A5B4E61F8C17D4003B014B /* SpotifyScriptObj.applescript in Sources */,
 				64A5B4E01F8ADDEC003B014B /* SpotifyScript.swift in Sources */,
 				64A5B4E81F8C36A0003B014B /* Vars.swift in Sources */,
-				64A5B4EE1F941240003B014B /* ClientInfoViewController.swift in Sources */,
+				64A5B4EE1F941240003B014B /* ClientViewController.swift in Sources */,
 				64C349BC1F87E36000116102 /* MiniSpotListViewController.swift in Sources */,
 				64A5B4EA1F8DA03D003B014B /* SongsViewController.swift in Sources */,
 				64A5B4E21F8ADE4C003B014B /* AppleScriptProtocol.swift in Sources */,

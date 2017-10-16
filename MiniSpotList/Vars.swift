@@ -21,4 +21,7 @@ class Vars: NSObject {
             clientSecret: "",
             redirectUri: "minispotlist://callback")
     )
+    static var appDelegate = AppDelegate()
+    static var popover = NSPopover()
+    static var statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
 }
