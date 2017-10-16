@@ -13,8 +13,6 @@ class Vars: NSObject {
     static var playlists = [SpotifyLibraryItem]()
     static var trackNames = [String]()
     static var tracks = [SpotifyTrack]()
-    static var clientId = ""
-    static var clientSecret = ""
     static var spotifyManager = SpotifyManager(with:
         SpotifyManager.SpotifyDeveloperApplication(
             clientId: "",
@@ -22,6 +20,6 @@ class Vars: NSObject {
             redirectUri: "minispotlist://callback")
     )
     static var appDelegate = AppDelegate()
-    static var popover = NSPopover()
     static var statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+    static var popover = NSPopover()
 }
