@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/SpotifyKit/Sources/SpotifyKit.swift"
-            timestampString = "529873958.621452"
+            timestampString = "529880121.910331"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "323"
@@ -74,13 +74,77 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MiniSpotList/MiniSpotListViewController.swift"
-            timestampString = "529873958.621686"
+            timestampString = "529880121.910451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
             endingLineNumber = "76"
             landmarkName = "freshController()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MiniSpotList/AppDelegate.swift"
+            timestampString = "529880121.910514"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "library(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MiniSpotList/AppDelegate.swift"
+            timestampString = "529880121.910567"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "library(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MiniSpotList.AppDelegate.library&lt;A where A: SpotifyKit.SpotifyLibraryItem&gt;(A.Type) -&gt; ()"
+                  moduleName = "MiniSpotList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleckeller/Documents/MiniSpotList/MiniSpotList/AppDelegate.swift"
+                  timestampString = "529878448.345089"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "357">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;A&gt;) -&gt; () in MiniSpotList.AppDelegate.library&lt;A where A: SpotifyKit.SpotifyLibraryItem&gt;(A.Type) -&gt; ()"
+                  moduleName = "MiniSpotList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleckeller/Documents/MiniSpotList/MiniSpotList/AppDelegate.swift"
+                  timestampString = "529878448.346994"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "154">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -13,16 +13,33 @@ import SpotifyKit
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-    }
-    
-    func launchPopover(){
+        //create button on menu bar
         if let button = Vars.statusItem.button {
             button.image = NSImage(named:NSImage.Name("music-player"))
             button.action = #selector(togglePopover(_:))
         }
+        //check if user is already authorized with spotify manager
+        //if user is, open up MiniSpotListController
+        //if not, open up ClientViewController
+        if (Vars.spotifyManager.authorize()){
+            print ("Already Authorized")
+            self.library(SpotifyPlaylist.self)
+        }
+        else{
+            print ("Not Authorized")
+            Vars.popover.contentViewController = ClientViewController.freshController()
+        }
+    }
+    // Gets the User's Spotify Library and sets the popover to the controller to display playlists
+    func library<T>(_ type: T.Type) where T: SpotifyLibraryItem {
+        print(Vars.spotifyManager.hasToken)
+        Vars.spotifyManager.library(type) { result in
+            for playlist in result {
+                Vars.playlists.append(playlist)
+                Vars.trackNames.append(playlist.name)
+            }
+        }
         Vars.popover.contentViewController = MiniSpotListViewController.freshController()
-        self.library(SpotifyPlaylist.self)
-        
     }
     
     @objc func togglePopover(_ sender: Any?) {
@@ -43,20 +60,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func closePopover(sender: Any?){
         Vars.popover.performClose(sender)
     }
-
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-    }
     
-    func library<T>(_ type: T.Type) where T: SpotifyLibraryItem {
-        Vars.spotifyManager.library(type) { result in
-            for playlist in result {
-                Vars.playlists.append(playlist)
-                Vars.trackNames.append(playlist.name)
-            }
-        }
-    }
     func myProfile() {
         Vars.spotifyManager.myProfile() { result in
             print(result)
@@ -70,6 +74,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func getCurrentlyPlaying() -> String {
         let spotifyScript = SpotifyScript.getTrack() as! AppleScriptProtocol
         return spotifyScript.getCurrentPlaying() as String
+    }
+    func getLibrary(){
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+            self.library(SpotifyPlaylist.self)
+        }
     }
     
 }

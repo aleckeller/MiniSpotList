@@ -16,6 +16,7 @@ class ClientViewController: NSViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     @IBAction func createSpotifyManager(_ sender: NSButton){
         Vars.spotifyManager = SpotifyManager(with:
             SpotifyManager.SpotifyDeveloperApplication(
@@ -24,12 +25,7 @@ class ClientViewController: NSViewController{
                 redirectUri: "minispotlist://callback")
         )
         initEventManager()
-        //if already authorized, launch app
-        //if the user is not authorized, handleURLEvent will be called and authorize them
-        if (Vars.spotifyManager.authorize()){
-            print ("Already Authorized")
-            Vars.appDelegate.launchPopover()
-        }
+        Vars.spotifyManager.authorize()
         
     }
     func initEventManager(){
@@ -40,9 +36,19 @@ class ClientViewController: NSViewController{
         if let descriptor = event.paramDescriptor(forKeyword: keyDirectObject),
             let urlString = descriptor.stringValue,
             let url = URL(string: urlString) {
+            Vars.popover.close()
             Vars.spotifyManager.saveToken(from: url)
-            print ("authorized")
-            Vars.appDelegate.launchPopover()
+            Vars.appDelegate.getLibrary()
         }
+    }
+}
+extension ClientViewController {
+    static func freshController() -> ClientViewController {
+        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle:nil)
+        let identifier = NSStoryboard.SceneIdentifier(rawValue: "ClientController")
+        guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? ClientViewController else {
+            fatalError("Can't find ClientViewController? - Check Main.storyboard")
+        }
+        return viewcontroller
     }
 }
