@@ -12,28 +12,21 @@ import SpotifyKit
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-    let popover = NSPopover()
-    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
     }
     
     func launchPopover(){
-
-        if let button = statusItem.button {
+        if let button = Vars.statusItem.button {
             button.image = NSImage(named:NSImage.Name("music-player"))
             button.action = #selector(togglePopover(_:))
         }
-        popover.contentViewController = MiniSpotListViewController.freshController()
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-            self.library(SpotifyPlaylist.self)
-            //self.myProfile()
-        }
+        Vars.popover.contentViewController = MiniSpotListViewController.freshController()
+        self.library(SpotifyPlaylist.self)
         
     }
     
     @objc func togglePopover(_ sender: Any?) {
-        if popover.isShown {
+        if Vars.popover.isShown {
             closePopover(sender: sender)
         }
         else{
@@ -42,13 +35,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func showPopover(sender: Any?){
-        if let button = statusItem.button {
-            popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+        if let button = Vars.statusItem.button {
+            Vars.popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
         }
     }
     
     func closePopover(sender: Any?){
-        popover.performClose(sender)
+        Vars.popover.performClose(sender)
     }
 
 

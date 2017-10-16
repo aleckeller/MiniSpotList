@@ -13,14 +13,13 @@ class SongsViewController: NSViewController, NSTableViewDataSource, NSTableViewD
     @IBOutlet weak var currentlyPlaying: NSTextField!
     @IBOutlet var tableView: NSTableView!
     var tracks = [SpotifyTrack]()
-    let app = AppDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
         tableView.target = self
         tableView.doubleAction = #selector(tableViewDoubleClick(_:))
-        currentlyPlaying.stringValue = app.getCurrentlyPlaying()
+        currentlyPlaying.stringValue = Vars.appDelegate.getCurrentlyPlaying()
     }
     func numberOfRows(in tableView: NSTableView) -> Int {
         return tracks.count
@@ -41,7 +40,7 @@ class SongsViewController: NSViewController, NSTableViewDataSource, NSTableViewD
     }
     @objc func tableViewDoubleClick(_ sender:AnyObject) {
         if (tableView.selectedRow >= 0){
-            app.playSong(id: tracks[tableView.selectedRow].id)
+            Vars.appDelegate.playSong(id: tracks[tableView.selectedRow].id)
             currentlyPlaying.stringValue = tracks[tableView.selectedRow].name
         }
     }

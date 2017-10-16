@@ -15,7 +15,6 @@ class ClientViewController: NSViewController{
     @IBOutlet weak var clientSecretText: NSSecureTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
     }
     @IBAction func createSpotifyManager(_ sender: NSButton){
         Vars.spotifyManager = SpotifyManager(with:
@@ -29,8 +28,7 @@ class ClientViewController: NSViewController{
         //if the user is not authorized, handleURLEvent will be called and authorize them
         if (Vars.spotifyManager.authorize()){
             print ("Already Authorized")
-            let appDel = AppDelegate()
-            appDel.launchPopover()
+            Vars.appDelegate.launchPopover()
         }
         
     }
@@ -44,8 +42,7 @@ class ClientViewController: NSViewController{
             let url = URL(string: urlString) {
             Vars.spotifyManager.saveToken(from: url)
             print ("authorized")
-            let appDel = AppDelegate()
-            appDel.launchPopover()
+            Vars.appDelegate.launchPopover()
         }
     }
 }
