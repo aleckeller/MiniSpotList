@@ -827,7 +827,7 @@
                                 </secureTextFieldCell>
                             </secureTextField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rJT-aE-XUA">
-                                <rect key="frame" x="178" y="239" width="141" height="22"/>
+                                <rect key="frame" x="178" y="231" width="141" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="MiniSpotList" id="kZV-YO-jke">
                                     <font key="font" size="18" name=".SFNSDisplay"/>
@@ -835,6 +835,11 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m7j-4A-OS1">
+                                <rect key="frame" x="320" y="116" width="134" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" identifier="spotifyImage" imageScaling="proportionallyDown" image="spotifyImage" id="ifg-Ai-a39"/>
+                            </imageView>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7nH-gy-ogj">
                                 <rect key="frame" x="146" y="46" width="205" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -851,6 +856,7 @@
                     <connections>
                         <outlet property="clientIdText" destination="mMu-TR-4Ag" id="p8b-jw-XB1"/>
                         <outlet property="clientSecretText" destination="Tio-hc-UYu" id="tYc-a7-YVk"/>
+                        <outlet property="spotifyImage" destination="ifg-Ai-a39" id="HBH-nq-0ce"/>
                     </connections>
                 </viewController>
                 <customObject id="QoU-SK-C33" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -966,7 +972,10 @@
                 </viewController>
                 <customObject id="rca-vz-EiH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="552.5" y="631.5"/>
+            <point key="canvasLocation" x="554" y="664"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="spotifyImage" width="637.79522705078125" height="637.79522705078125"/>
+    </resources>
 </document>
