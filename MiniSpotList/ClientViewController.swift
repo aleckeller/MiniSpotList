@@ -11,6 +11,7 @@ import SpotifyKit
 
 class ClientViewController: NSViewController{
     
+    @IBOutlet weak var spotifyImage: NSImageCell!
     @IBOutlet weak var clientIdText: NSTextField!
     @IBOutlet weak var clientSecretText: NSSecureTextField!
     override func viewDidLoad() {

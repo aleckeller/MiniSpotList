@@ -407,9 +407,9 @@ public class SpotifyManager {
      you then have to manually copy the 'code' from the opened url
      and insert it to get the actual token
      */
-    public func authorize() -> Bool {
+    public func authorize() {
         // Only proceed with authorization if we have no token
-        guard !hasToken else { return true}
+        guard !hasToken else { return }
         
         if  let application = application,
             let url = SpotifyQuery.authorize.url?.with(parameters: authorizationParameters(for: application)) {
@@ -423,7 +423,6 @@ public class SpotifyManager {
                 UIApplication.shared.open(url)
             #endif
         }
-        return false
     }
     
     /**
@@ -504,11 +503,21 @@ public class SpotifyManager {
     }
     
     /**
+     Returns if the helper is currently holding a token
+     */
+    public var expired: Bool {
+        guard let token = token else { return false }
+        
+        // Only return true if the token is actually valid
+        return token.isExpired
+    }
+    
+    
+    /**
      Refreshes the token when expired
      */
     public func refreshToken(completionHandler: @escaping (Bool) -> ()) {
         guard let application = application, let token = self.token else { return }
-        
         URLSession.shared.request(SpotifyQuery.token,
                                   method: .POST,
                                   parameters: refreshTokenParameters(from: token),

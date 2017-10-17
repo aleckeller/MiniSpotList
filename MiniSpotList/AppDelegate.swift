@@ -21,8 +21,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         //check if user is already authorized with spotify manager
         //if user is, open up MiniSpotListController
         //if not, open up ClientViewController
-        if (Vars.spotifyManager.authorize()){
-            print ("Already Authorized")
+        if (Vars.spotifyManager.hasToken && !Vars.spotifyManager.expired){
+            print ("Already Authorized and Token is not expired")
             self.library(SpotifyPlaylist.self)
         }
         else{
