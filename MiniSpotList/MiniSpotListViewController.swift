@@ -34,22 +34,35 @@ class MiniSpotListViewController: NSViewController, NSTableViewDataSource, NSTab
        self.selectedPlaylist(index: tableView.selectedRow)
     }
     func selectedPlaylist(index: Int){
-        //print(Vars.playlists[index])
         if (index >= 0){
+            //erase previous contents
+            Vars.selectedPlaylistUserId = ""
+            Vars.selectdPlaylistId = ""
             let id = Vars.playlists[index].id
-            let uri = Vars.playlists[index].uri
-            let fromIndex = uri.index(uri.startIndex, offsetBy: 13)
-            let secondHalf = uri.substring(from: fromIndex)
-            var playlistUserId = ""
+            Vars.selectedPlaylistUri = Vars.playlists[index].uri
+            //get user id from the playlist uri
+            var fromIndex = Vars.selectedPlaylistUri.index(Vars.selectedPlaylistUri.startIndex, offsetBy: 13)
+            var secondHalf = Vars.selectedPlaylistUri.substring(from: fromIndex)
             for x in secondHalf{
                 if (x != ":"){
-                    playlistUserId.append(x)
+                    Vars.selectedPlaylistUserId.append(x)
                 }
                 else{
                     break
                 }
             }
-            self.get(SpotifyPlaylist.self, id: id, playlistUserId: playlistUserId)
+            //get the playlist id from the uri
+            fromIndex = Vars.selectedPlaylistUri.index(Vars.selectedPlaylistUri.startIndex, offsetBy: 33)
+            secondHalf = Vars.selectedPlaylistUri.substring(from: fromIndex)
+            for x in secondHalf{
+                if (x != ":"){
+                    Vars.selectdPlaylistId.append(x)
+                }
+                else{
+                    break
+                }
+            }
+            self.get(SpotifyPlaylist.self, id: id, playlistUserId: Vars.selectedPlaylistUserId)
         }
         
     }

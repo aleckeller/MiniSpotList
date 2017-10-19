@@ -11,6 +11,9 @@ import SpotifyKit
 
 class Vars: NSObject {
     static var playlists = [SpotifyLibraryItem]()
+    static var selectedPlaylistUri = String()
+    static var selectedPlaylistUserId = String()
+    static var selectdPlaylistId = String()
     static var trackNames = [String]()
     static var tracks = [SpotifyTrack]()
     static var spotifyManager = SpotifyManager(with:

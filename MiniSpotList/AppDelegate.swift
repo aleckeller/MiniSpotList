@@ -69,7 +69,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func playSong(id: String){
         let spotifyScript = SpotifyScript.getTrack() as! AppleScriptProtocol
         let trackId = NSAppleEventDescriptor(string: id)
-        spotifyScript.playTrack(trackId)
+        let userId = NSAppleEventDescriptor(string: Vars.selectedPlaylistUserId)
+        let playlistId = NSAppleEventDescriptor(string: Vars.selectdPlaylistId)
+        spotifyScript.playTrack(trackId, userId: userId, playlistId: playlistId)
     }
     func getCurrentlyPlaying() -> String {
         let spotifyScript = SpotifyScript.getTrack() as! AppleScriptProtocol

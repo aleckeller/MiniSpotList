@@ -14,10 +14,10 @@ script SpotifyScriptObj
         end tell
     end getCurrentlyPlayingTrack
 
-    on playTrack:trackId
+    on playTrack:trackId userId:theUserId playlistId: thePlaylistId
         tell application "Spotify"
-            play track "spotify:track:" & trackId
+            play track "spotify:track:" & trackId in context "spotify:user:" & theUserId & ":playlist:" & thePlaylistId
         end tell
-    end playTrack
+    end playTrack:playlist:
 
 end script

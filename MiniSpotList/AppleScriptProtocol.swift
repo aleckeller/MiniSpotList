@@ -9,6 +9,6 @@
 import Foundation
 
 @objc(NSObject) protocol AppleScriptProtocol {
-    func playTrack(_: NSAppleEventDescriptor)
+    func playTrack(_: NSAppleEventDescriptor, userId: NSAppleEventDescriptor, playlistId: NSAppleEventDescriptor)
     func getCurrentPlaying() -> NSString
 }
