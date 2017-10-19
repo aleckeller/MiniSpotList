@@ -81,9 +81,9 @@ class MiniSpotListViewController: NSViewController, NSTableViewDataSource, NSTab
         // set a variable in the second view controller with the data to pass
         secondViewController.tracks = Vars.tracks
     }
-    
-    
-    
+    @IBAction func quit(_ sender: NSButton) {
+        NSApplication.shared.terminate(sender)
+    }
 }
 extension MiniSpotListViewController {
     static func freshController() -> MiniSpotListViewController {

@@ -44,8 +44,5 @@ class SongsViewController: NSViewController, NSTableViewDataSource, NSTableViewD
             currentlyPlaying.stringValue = tracks[tableView.selectedRow].name
         }
     }
-    @IBAction func quit(_ sender: NSButton) {
-        NSApplication.shared.terminate(sender)
-    }
     
 }

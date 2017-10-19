@@ -42,6 +42,9 @@ class ClientViewController: NSViewController{
             Vars.appDelegate.getLibrary()
         }
     }
+    @IBAction func quit(_ sender: NSButton) {
+        NSApplication.shared.terminate(sender)
+    }
 }
 extension ClientViewController {
     static func freshController() -> ClientViewController {
